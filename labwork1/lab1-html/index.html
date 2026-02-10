@@ -1,0 +1,60 @@
+<!-- step 1 !-->
+<!-- md lab1-html & cd lab1-html & echo.>index.html & echo.>main.js & echo.>a.js & echo.>b.js & echo.>c.js -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1-html</title>
+
+    <!-- step 3 -->
+    <script src="main.js"></script>
+
+    <!-- step 4 -->
+    <script src="a.js" async></script>
+
+    <!-- step 5 -->
+    <script src="b.js" defer></script>
+
+
+    <!-- in next steps: need to remove previous links for clear presentation, but in code I'll leave it as is -->
+    <!-- step 6: always A -→ B -→ C in same place -->
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+    <script src="c.js"></script>
+
+    <!-- step 7: order always different -->
+    <script src="a.js" async></script>
+    <script src="b.js" async></script>
+    <script src="c.js" async></script>
+
+    <!-- step 8: always A -→ B -→ C, in page end (because wait for loading) -->
+    <script src="a.js" defer></script>
+    <script src="b.js" defer></script>
+    <script src="c.js" defer></script>
+
+    <!-- step 9: A always first, then Inline, and then B -→ C or C -→ B  -->
+    <script src="a.js"></script>
+    <script src="b.js" async></script>
+    <script src="c.js" defer></script>
+</head>
+
+<body>
+    <h1>1-1</h1>
+
+    <!-- step 2 -->
+    <script>
+        console.log("Inline script executed.");
+        //for (let i = 0; i < 2000; i++) console.log("Inline");
+    </script>
+
+    <!-- step 10: 
+     defer - loads async and executes after DOM parsing in order;
+     Main - loads sync (when parser reaches tag in end) and executes in that same moment 
+    -->
+    <script src="main.js"></script>
+</body>
+
+</html>

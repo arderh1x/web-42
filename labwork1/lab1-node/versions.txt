@@ -1,0 +1,10 @@
+ /* step 1-2 */
+node -v 
+v22.17.0
+
+npm -v
+10.9.2
+
+/* step 3 */
+md lab1-node & cd lab1-node & echo.>versions.txt 
+    & echo.>script.js & echo.>echo-args.js & echo.>sum.js & echo.>calc.js & echo.>delay.js & echo.>args-validate.js

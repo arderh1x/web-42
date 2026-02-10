@@ -1,0 +1,13 @@
+/* step 9 */
+
+process.argv:
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'D:\\desc\\універ v2.0\\!у процесі!\\[4-2] Вебпрограмування\\web-42\\labwork1\\lab1-node\\echo-args.js',
+  'hello world',
+  'x y z'
+]
+
+every argument = string:
+hi (as one word) = 'hi' (one argument)
+"hello world" (as few words) = 'hello world' (still as one argument)
