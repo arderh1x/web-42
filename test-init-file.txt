@@ -1,1 +1,50 @@
 200
+
+- code from expressJS learning (saving for reference)
+--- index.js: 
+app.use("/request", requestTime); // middleware test - will execute on /request
+
+app.use("/error-test", notFound); // test to error
+
+app.get("/weather", (req, res) => {
+    //console.log(req.requestTime);
+    //res.send("<h1>I'll return weather...</h1>");
+    res.send({ city: "Kyiv", temperature: 12 });
+});
+
+app.get("/about", (req, res) => {
+    // http://localhost:4200/about?name=Tom&id=5
+    const id = req.query.id;
+    const userName = req.query.name;
+    res.send(`<h1>Info:</h1><p>id: ${id}</p><p>name: ${userName}</p>`);
+});
+
+
+--- middlewares.js:
+export function requestTime(req, res, next) {
+    req.requestTime = Date.now();
+    console.log(req.requestTime);
+    next();
+}
+
+export function notFound(req, res, next) {
+    res.status(418).send(`From custom middleware - your request is... what it is??`);
+}
+
+
+--- api.js
+export const getNewUsers = async () {
+    const response = await fetch("/api/users");
+    let users = await response.json();
+    console.log(response, users);
+
+    return users.slice(0, 5);
+}
+
+
+--- controllers.js
+getUsersAPI
+ const validColumns = Object.keys(users[0]); // [ 'firstname', 'lastname', 'score' ]
+ idea was in dynamic column options, but:
+  firstly task ask only firstname and lastname
+  secondly score is number and need to write checker for this case (don't have localeCompare)

@@ -1,0 +1,87 @@
+/* 2) */
+
+header {
+    height: 100px;
+    background-color: rgb(135, 90, 219);
+}
+
+footer {
+    height: 100px;
+    background-color: rgb(142, 152, 241);
+}
+
+
+main {
+    height: 500px;
+    background-color: rgb(201, 92, 92);
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: space-between;
+}
+
+#leftPanel {
+    background-color: rgb(240, 112, 112);
+}
+
+#content {
+    background-color: rgb(238, 147, 147);
+    position: relative;
+}
+
+
+#rightPanel {
+    background-color: rgb(224, 126, 126);
+}
+
+.loader {
+    margin: auto;
+    margin-top: 50%;
+
+    border: 16px solid #ffdbdb;
+    border-top: 16px solid #921717;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+tr.yellow {
+    border: 5px solid yellow;
+}
+
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 5px;
+    margin-top: 20px;
+}
+
+#gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
