@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+#root {
+    display: grid;
+    grid-template-areas:
+        "h h"
+        "s m";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+}
+
+
+header {
+    grid-area: h;
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    grid-area: s;
+    padding: 20px;
+    font-size: 24px;
+}
+
+main {
+    grid-area: m;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.task-item {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.task-item .task-body {
+    margin: 0;
+}
+
+.task-item.completed .task-body {
+    text-decoration: line-through;
+}
+
+.add-task {
+    margin-bottom: 15px;
+}
+
+
+.dark-theme header {
+    background-color: rgb(6, 14, 44);
+    color: white;
+}
+
+.dark-theme aside {
+    background-color: rgb(32, 45, 95);
+    color: white;
+}
+
+.dark-theme main {
+    background-color: rgb(17, 29, 83);
+    color: white;
+}
+
+
+.light-theme header {
+    background-color: rgb(59, 78, 165);
+    color: black;
+}
+
+.light-theme aside {
+    background-color: rgb(163, 174, 226);
+    color: black;
+}
+
+.light-theme main {
+    background-color: rgb(130, 146, 218);
+    color: black;
+}
