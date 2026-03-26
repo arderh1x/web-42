@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+#root {
+    display: grid;
+    grid-template-areas:
+        "addT search"
+        "addT list";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 370px 1fr;
+    height: 100vh;
+}
+
+
+#search-bar {
+    grid-area: search;
+    padding: 20px;
+    background-color: rgb(11, 172, 11);
+}
+
+#add-task-form {
+    grid-area: addT;
+    padding: 20px;
+    background-color: rgb(14, 133, 14);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#tasks-list {
+    grid-area: list;
+    padding: 20px;
+    background-color: rgb(146, 247, 146);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-card {
+    padding:10px;
+}
+
+
+.task-card.red-border {
+border: 3px solid red;
+}
+
+.task-card.green-border {
+border: 3px solid green;
+}
+
+
+.task-card.hot-task .task-title {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.task-card.hot-task .task-title::before {
+    content: "💥!!! ";
+    color: red;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.task-card.hot-task .task-severity{
+    font-size: 30px;
+    color:red;
+}
